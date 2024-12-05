@@ -60,15 +60,15 @@ class UsersRecord extends FirestoreRecord {
   double get gastos => _gastos ?? 0.0;
   bool hasGastos() => _gastos != null;
 
-  // "movimientos" field.
-  List<MovimientosStruct>? _movimientos;
-  List<MovimientosStruct> get movimientos => _movimientos ?? const [];
-  bool hasMovimientos() => _movimientos != null;
-
   // "dinerometa" field.
   double? _dinerometa;
   double get dinerometa => _dinerometa ?? 0.0;
   bool hasDinerometa() => _dinerometa != null;
+
+  // "movimientos" field.
+  List<MovimientosStruct>? _movimientos;
+  List<MovimientosStruct> get movimientos => _movimientos ?? const [];
+  bool hasMovimientos() => _movimientos != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -80,11 +80,11 @@ class UsersRecord extends FirestoreRecord {
     _dinerototal = castToType<double>(snapshotData['dinerototal']);
     _ingresos = castToType<double>(snapshotData['ingresos']);
     _gastos = castToType<double>(snapshotData['gastos']);
+    _dinerometa = castToType<double>(snapshotData['dinerometa']);
     _movimientos = getStructList(
       snapshotData['movimientos'],
       MovimientosStruct.fromMap,
     );
-    _dinerometa = castToType<double>(snapshotData['dinerometa']);
   }
 
   static CollectionReference get collection =>
@@ -165,8 +165,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.dinerototal == e2?.dinerototal &&
         e1?.ingresos == e2?.ingresos &&
         e1?.gastos == e2?.gastos &&
-        listEquality.equals(e1?.movimientos, e2?.movimientos) &&
-        e1?.dinerometa == e2?.dinerometa;
+        e1?.dinerometa == e2?.dinerometa &&
+        listEquality.equals(e1?.movimientos, e2?.movimientos);
   }
 
   @override
@@ -180,8 +180,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.dinerototal,
         e?.ingresos,
         e?.gastos,
-        e?.movimientos,
-        e?.dinerometa
+        e?.dinerometa,
+        e?.movimientos
       ]);
 
   @override

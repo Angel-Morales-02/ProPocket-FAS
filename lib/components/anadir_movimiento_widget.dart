@@ -104,6 +104,7 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                   'Crea Movimiento...',
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
                         fontFamily: 'Inter Tight',
+                        color: FlutterFlowTheme.of(context).charcoal,
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -121,7 +122,7 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                             () => _model.choiceChipsValue = val?.firstOrNull),
                         selectedChipStyle: ChipStyle(
                           backgroundColor:
-                              FlutterFlowTheme.of(context).blueGreen,
+                              FlutterFlowTheme.of(context).darkGoldenrod,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
@@ -136,17 +137,15 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         unselectedChipStyle: ChipStyle(
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          backgroundColor: const Color(0x8CBB8B06),
                           textStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
                                 fontFamily: 'Inter',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context).platinum,
                                 letterSpacing: 0.0,
                               ),
-                          iconColor: FlutterFlowTheme.of(context).secondaryText,
+                          iconColor: FlutterFlowTheme.of(context).white,
                           iconSize: 16.0,
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(8.0),
@@ -176,13 +175,15 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context).charcoal,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'TextField',
+                            hintText: 'Ingresa una Cantidad',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context).charcoal,
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -217,11 +218,13 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Inter',
+                                color: FlutterFlowTheme.of(context).charcoal,
+                                letterSpacing: 0.0,
+                              ),
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -242,7 +245,7 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                          hintText: 'TextField',
+                          hintText: 'Ingresa el Motivo',
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',
@@ -285,8 +288,6 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                               letterSpacing: 0.0,
                             ),
                         maxLines: 3,
-                        keyboardType: const TextInputType.numberWithOptions(
-                            decimal: true),
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
                         validator: _model.textController2Validator
                             .asValidator(context),
@@ -429,11 +430,11 @@ class _AnadirMovimientoWidgetState extends State<AnadirMovimientoWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).prussianBlue,
+                      color: FlutterFlowTheme.of(context).ecru,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
-                                color: Colors.white,
+                                color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
                       elevation: 0.0,

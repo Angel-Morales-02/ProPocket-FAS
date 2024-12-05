@@ -18,10 +18,10 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
-    "serve": "firebase -P proyecto-propocket-03nbid emulators:start --only functions",
-    "shell": "firebase -P proyecto-propocket-03nbid functions:shell",
+    "serve": "firebase -P propocket-89477 emulators:start --only functions",
+    "shell": "firebase -P propocket-89477 functions:shell",
     "start": "npm run shell",
-    "logs": "firebase -P proyecto-propocket-03nbid functions:log",
+    "logs": "firebase -P propocket-89477 functions:log",
     "compile": "cp ../../tsconfig.template.json ./tsconfig-compile.json && tsc --project tsconfig-compile.json"
   },
   "engines": {

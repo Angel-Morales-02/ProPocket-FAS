@@ -3,31 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
-
-const kThemeModeKey = '__theme_mode__';
-SharedPreferences? _prefs;
-
 abstract class FlutterFlowTheme {
-  static Future initialize() async =>
-      _prefs = await SharedPreferences.getInstance();
-  static ThemeMode get themeMode {
-    final darkMode = _prefs?.getBool(kThemeModeKey);
-    return darkMode == null
-        ? ThemeMode.system
-        : darkMode
-            ? ThemeMode.dark
-            : ThemeMode.light;
-  }
-
-  static void saveThemeMode(ThemeMode mode) => mode == ThemeMode.system
-      ? _prefs?.remove(kThemeModeKey)
-      : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
-
   static FlutterFlowTheme of(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark
-        ? DarkModeTheme()
-        : LightModeTheme();
+    return LightModeTheme();
   }
 
   @Deprecated('Use primary instead')
@@ -64,6 +42,13 @@ abstract class FlutterFlowTheme {
   late Color prussianBlue;
   late Color selectiveYellow;
   late Color uTOrange;
+  late Color platinum;
+  late Color satinSheenGold;
+  late Color white;
+  late Color darkGoldenrod;
+  late Color ecru;
+  late Color white2;
+  late Color charcoal;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -163,6 +148,13 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color prussianBlue = const Color(0xFF023047);
   late Color selectiveYellow = const Color(0xFFFFB703);
   late Color uTOrange = const Color(0xFFFB8500);
+  late Color platinum = const Color(0xFFE9E8E3);
+  late Color satinSheenGold = const Color(0xFFC79F30);
+  late Color white = const Color(0xFFFEFEFE);
+  late Color darkGoldenrod = const Color(0xFFBB8B06);
+  late Color ecru = const Color(0xFFDEC685);
+  late Color white2 = const Color(0xFFFFFFFF);
+  late Color charcoal = const Color(0xFF384358);
 }
 
 abstract class Typography {
@@ -308,43 +300,6 @@ class ThemeTypography extends Typography {
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-}
-
-class DarkModeTheme extends FlutterFlowTheme {
-  @Deprecated('Use primary instead')
-  Color get primaryColor => primary;
-  @Deprecated('Use secondary instead')
-  Color get secondaryColor => secondary;
-  @Deprecated('Use tertiary instead')
-  Color get tertiaryColor => tertiary;
-
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFF262D34);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF1D2428);
-  late Color secondaryBackground = const Color(0xFF14181B);
-  late Color accent1 = const Color(0x4C4B39EF);
-  late Color accent2 = const Color(0x4D39D2C0);
-  late Color accent3 = const Color(0x4DEE8B60);
-  late Color accent4 = const Color(0xB2262D34);
-  late Color success = const Color(0xFF249689);
-  late Color warning = const Color(0xFFF9CF58);
-  late Color error = const Color(0xFFFF5963);
-  late Color info = const Color(0xFFFFFFFF);
-
-  late Color battleshipGray = const Color(0xFF989C94);
-  late Color brunswickGreen = const Color(0xFF335145);
-  late Color darkGreen = const Color(0xFF1E352F);
-  late Color jonquil = const Color(0xFFF6CC2D);
-  late Color bole = const Color(0xFF764134);
-  late Color skyBlue = const Color(0xFF8ECAE6);
-  late Color blueGreen = const Color(0xFF219EBC);
-  late Color prussianBlue = const Color(0xFF023047);
-  late Color selectiveYellow = const Color(0xFFFFB703);
-  late Color uTOrange = const Color(0xFFFB8500);
 }
 
 extension TextStyleHelper on TextStyle {

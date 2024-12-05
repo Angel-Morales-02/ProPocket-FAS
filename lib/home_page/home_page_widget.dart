@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -58,11 +59,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               },
             ).then((value) => safeSetState(() {}));
           },
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).ecru,
           elevation: 8.0,
           child: Icon(
             Icons.add_rounded,
-            color: FlutterFlowTheme.of(context).info,
+            color: FlutterFlowTheme.of(context).charcoal,
             size: 24.0,
           ),
         ),
@@ -76,12 +77,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'Inicio',
+                      'Bienvenido',
                       style:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Inter Tight',
+                                color: FlutterFlowTheme.of(context).charcoal,
                                 letterSpacing: 0.0,
                               ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: SvgPicture.asset(
+                          'assets/images/Cartera[1].png',
+                          width: 101.0,
+                          height: 46.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Flexible(
                       child: Align(
@@ -110,8 +125,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           },
                           child: Icon(
                             Icons.golf_course_sharp,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
+                            color: FlutterFlowTheme.of(context).charcoal,
+                            size: 30.0,
                           ),
                         ),
                       ),
@@ -122,111 +137,44 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Material(
-                        color: Colors.transparent,
-                        elevation: 4.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24.0),
-                        ),
-                        child: Container(
-                          width: 170.0,
-                          height: 170.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).prussianBlue,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 4.0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(24.0),
-                            border: Border.all(
-                              color: Colors.transparent,
-                              width: 2.0,
+                          ),
+                          child: Container(
+                            width: 350.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).prussianBlue,
+                              borderRadius: BorderRadius.circular(24.0),
+                              border: Border.all(
+                                color: Colors.transparent,
+                                width: 2.0,
+                              ),
                             ),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              const Icon(
-                                Icons.monetization_on_outlined,
-                                color: Color(0xFFF8F3F3),
-                                size: 30.0,
-                              ),
-                              AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  formatNumber(
-                                    valueOrDefault(
-                                        currentUserDocument?.dinerototal, 0.0),
-                                    formatType: FormatType.custom,
-                                    format: '\$0.0',
-                                    locale: '',
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        color: Colors.white,
-                                        fontSize: 32.0,
-                                        letterSpacing: 0.0,
-                                      ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                const Icon(
+                                  Icons.monetization_on_outlined,
+                                  color: Color(0xFFF8F3F3),
+                                  size: 30.0,
                                 ),
-                              ),
-                              Text(
-                                'Dinero Total',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Material(
-                        color: Colors.transparent,
-                        elevation: 4.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24.0),
-                        ),
-                        child: Container(
-                          width: 170.0,
-                          height: 170.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(24.0),
-                            border: Border.all(
-                              color: Colors.transparent,
-                              width: 2.0,
-                            ),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              if (valueOrDefault(
-                                      currentUserDocument?.dinerometa, 0.0) !=
-                                  0.0)
-                                AuthUserStreamWidget(
-                                  builder: (context) => Icon(
-                                    Icons.golf_course_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
-                                  ),
-                                ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.dinerometa, 0.0) !=
-                                  0.0)
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
                                     formatNumber(
                                       valueOrDefault(
-                                          currentUserDocument?.dinerometa, 0.0),
+                                          currentUserDocument?.dinerototal,
+                                          0.0),
                                       formatType: FormatType.custom,
                                       format: '\$0.0',
                                       locale: '',
@@ -236,81 +184,172 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          fontSize: 32.0,
+                                          color: Colors.white,
+                                          fontSize: 40.0,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.dinerometa, 0.0) !=
-                                  0.0)
-                                AuthUserStreamWidget(
-                                  builder: (context) => Text(
-                                    'Dinero Objetivo',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
+                                Text(
+                                  'Dinero Total',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
-                              if ((valueOrDefault(
-                                          currentUserDocument?.dinerometa,
-                                          0.0) ==
-                                      0.0) ||
-                                  (valueOrDefault(
-                                          currentUserDocument?.dinerometa,
-                                          0.0) ==
-                                      null))
-                                AuthUserStreamWidget(
-                                  builder: (context) => FFButtonWidget(
-                                    onPressed: () async {
-                                      await showModalBottomSheet(
-                                        isScrollControlled: true,
-                                        backgroundColor: Colors.transparent,
-                                        enableDrag: false,
-                                        context: context,
-                                        builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () => FocusScope.of(context)
-                                                .unfocus(),
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: const MetaWidget(),
-                                            ),
-                                          );
-                                        },
-                                      ).then((value) => safeSetState(() {}));
-                                    },
-                                    text: 'Poner Meta',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter Tight',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 4.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24.0),
+                          ),
+                          child: Container(
+                            width: 350.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(24.0),
+                              border: Border.all(
+                                color: Colors.transparent,
+                                width: 2.0,
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                if (valueOrDefault(
+                                        currentUserDocument?.dinerometa, 0.0) !=
+                                    0.0)
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Icon(
+                                      Icons.golf_course_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).charcoal,
+                                      size: 30.0,
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.dinerometa, 0.0) !=
+                                    0.0)
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      formatNumber(
+                                        valueOrDefault(
+                                            currentUserDocument?.dinerometa,
+                                            0.0),
+                                        formatType: FormatType.custom,
+                                        format: '\$0.0',
+                                        locale: '',
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: FlutterFlowTheme.of(context)
+                                                .charcoal,
+                                            fontSize: 36.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.dinerometa, 0.0) !=
+                                    0.0)
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      'Dinero Objetivo',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: FlutterFlowTheme.of(context)
+                                                .charcoal,
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.dinerometa,
+                                            0.0) ==
+                                        0.0) ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.dinerometa,
+                                            0.0) ==
+                                        null))
+                                  AuthUserStreamWidget(
+                                    builder: (context) => FFButtonWidget(
+                                      onPressed: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: const MetaWidget(),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      text: 'Poner Meta',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0xFFE7CB6E),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .prussianBlue,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 0.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -369,6 +408,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
+                                      color:
+                                          FlutterFlowTheme.of(context).charcoal,
+                                      fontSize: 20.0,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -429,6 +471,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
+                                      color:
+                                          FlutterFlowTheme.of(context).charcoal,
+                                      fontSize: 20.0,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -452,12 +497,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Movimientos',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Inter',
+                                color: FlutterFlowTheme.of(context).charcoal,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                              ),
                         ),
                       ),
                     ),
@@ -639,7 +686,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   ),
                                                             ),
                                                             Text(
-                                                              '${movimientosItem.esingreso == true ? 'Ingreso' : 'Gasto'}del día ${dateTimeFormat("d/M/y", movimientosItem.fecha)}',
+                                                              '${movimientosItem.esingreso == true ? 'Ingreso' : 'Gasto'} del día ${dateTimeFormat("d/M/y", movimientosItem.fecha)}',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -665,7 +712,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         .arrow_forward_ios_sharp,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .charcoal,
                                                     size: 18.0,
                                                   ),
                                                 ),
@@ -714,6 +761,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .charcoal,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -731,6 +781,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ],
                 ),
+              ),
+              const Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [],
               ),
             ],
           ),

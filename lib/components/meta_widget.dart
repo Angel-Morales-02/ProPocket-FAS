@@ -121,6 +121,8 @@ class _MetaWidgetState extends State<MetaWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Ingresa una cantidad...',
@@ -215,11 +217,11 @@ class _MetaWidgetState extends State<MetaWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).prussianBlue,
+                      color: FlutterFlowTheme.of(context).ecru,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter Tight',
-                                color: Colors.white,
+                                color: Colors.black,
                                 letterSpacing: 0.0,
                               ),
                       elevation: 0.0,

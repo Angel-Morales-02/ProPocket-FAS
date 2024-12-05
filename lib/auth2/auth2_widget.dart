@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'auth2_model.dart';
 export 'auth2_model.dart';
@@ -29,11 +28,6 @@ class _Auth2WidgetState extends State<Auth2Widget>
   void initState() {
     super.initState();
     _model = createModel(context, () => Auth2Model());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('HomePage');
-    });
 
     _model.tabBarController = TabController(
       vsync: this,
@@ -154,19 +148,19 @@ class _Auth2WidgetState extends State<Auth2Widget>
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 72.0),
-                    child: Text(
-                      'ProProcket',
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Plus Jakarta Sans',
-                            color: const Color(0xFF101213),
-                            fontSize: 36.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                    ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/Logo.png',
+                          width: 356.0,
+                          height: 161.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -244,10 +238,10 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                       indicatorWeight: 3.0,
                                       tabs: const [
                                         Tab(
-                                          text: 'Create Account',
+                                          text: 'Crear Cuenta',
                                         ),
                                         Tab(
-                                          text: 'Log In',
+                                          text: 'Iniciar Sesión',
                                         ),
                                       ],
                                       controller: _model.tabBarController,
@@ -286,7 +280,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                       ),
                                                     ),
                                                   Text(
-                                                    'Create Account',
+                                                    'Crear Cuenta',
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -308,7 +302,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 24.0),
                                                     child: Text(
-                                                      'Let\'s get started by filling out the form below.',
+                                                      'Empecemos llenando los siguientes apartados con tus datos.',
                                                       textAlign:
                                                           TextAlign.start,
                                                       style: FlutterFlowTheme
@@ -345,7 +339,8 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                         obscureText: false,
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Email',
+                                                          labelText:
+                                                              'Correo Electrónico',
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -461,13 +456,14 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                             .passwordCreateFocusNode,
                                                         autofocus: true,
                                                         autofillHints: const [
-                                                          AutofillHints.password
+                                                          AutofillHints.email
                                                         ],
                                                         obscureText: !_model
                                                             .passwordCreateVisibility,
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Password',
+                                                          labelText:
+                                                              'Contraseña',
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -608,7 +604,8 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                             .confirmVisibility,
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Password',
+                                                          labelText:
+                                                              'Confirmar Contraseña',
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -797,7 +794,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                               'HomePage',
                                                               context.mounted);
                                                         },
-                                                        text: 'Get Started',
+                                                        text: 'Comencemos',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 230.0,
@@ -882,7 +879,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                       ),
                                                     ),
                                                   Text(
-                                                    'Welcome Back',
+                                                    'Bienvenido ',
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -904,7 +901,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 24.0),
                                                     child: Text(
-                                                      'Fill out the information below in order to access your account.',
+                                                      'Ingresa tus datos para poder iniciar sesion.',
                                                       textAlign:
                                                           TextAlign.start,
                                                       style: FlutterFlowTheme
@@ -941,7 +938,8 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                         obscureText: false,
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Email',
+                                                          labelText:
+                                                              'Correo Electrónico',
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1067,7 +1065,8 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                             .passwordVisibility,
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Password',
+                                                          labelText:
+                                                              'Contraseña',
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1228,7 +1227,7 @@ class _Auth2WidgetState extends State<Auth2Widget>
                                                               'HomePage',
                                                               context.mounted);
                                                         },
-                                                        text: 'Sign In',
+                                                        text: 'Iniciar',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 230.0,

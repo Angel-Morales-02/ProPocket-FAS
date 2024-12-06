@@ -1,7 +1,4 @@
-# ProyectoPropocket
+# Aplicación: Propocket
 
-A new Flutter project.
+En este repositorio podemos encontrar todo el codigo fuente de la aplicacion
 
-## Getting Started
-
-FlutterFlow projects are built to run on the Flutter _stable_ release.
